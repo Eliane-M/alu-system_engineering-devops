@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 # Installs Nginxon a server
 
-apt install nginx
+apt update
+apt install -y nginx
+
 service nginx start
-rm index.nginx-debian.html
-touch index.html
-echo "<html><head></head><body><p>Holberton School</p></body></html>
+
+rm /var/www/html/index.nginx-debian.html
+
+echo "<html><head></head><body><p>Holberton School</p></body></html>" > /var/www/html/index.html
+service nginx restart
+
+exit 0
