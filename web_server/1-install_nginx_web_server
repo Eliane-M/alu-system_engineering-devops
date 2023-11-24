@@ -6,7 +6,7 @@ ssh web-01@34.198.248.145 'sudo apt-get install -y nginx'
 
 ssh web-01@34.198.248.145 'sudo service nginx start'
 
-rm /var/www/html/index.nginx-debian.html
+ssh web-01@34.198.248.145 'sudo rm /var/www/html/index.nginx-debian.html'
 
 echo "<html><head></head><body><p>Holberton School</p></body></html>" |ssh web-01@34.198.248.145 'sudo tee /var/www/html/index.html'
 ssh web-01@34.198.248.145 'sudo service nginx restart'
