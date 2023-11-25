@@ -8,4 +8,4 @@ sudo ufw allow 'Nginx HTTP'
 
 echo "Holberton School" |sudo tee /var/www/html/index.html
 sudo nginx -t
-sudo service nginx restart
+sudo service nginx start
