@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# bash script that installs HAProxy & makes configurations to meet the following requirements:
+# Installs HAProxy version 2.0 with the following configurations:
 
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-1.8
 apt-get update
-apt-get install -y haproxy=1.8.\*
+apt-get install -y haproxy=2.0.*
 
 echo "ENABLED=1" >> /etc/default/haproxy
 mv /etc/haproxy/haproxy.cfg{,.original}
@@ -35,8 +35,8 @@ listen hbnb
     balance roundrobin
     option httpclose
     option forwardfor
-    server 5873-web-01 34.207.208.97:80 check
-    server 5873-web-02 18.212.99.114:80 check
+    server 5885-web-01 18.215.180.47:80 check
+    server 5885-web-02 3.94.191.244:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy start
