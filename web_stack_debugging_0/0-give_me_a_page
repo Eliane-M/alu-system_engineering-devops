@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# return a page containing 'Hello Holberton'
+
+sudo apt install apache 2
+
+echo "ServerName localhost" >> /etc/apache2.conf
+sudo service apache2 start
